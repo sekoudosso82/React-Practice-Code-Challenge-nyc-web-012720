@@ -22,7 +22,7 @@ class App extends Component {
       this.setState({ sushis: sushis})
     })
   }
-  handleShowMore() {
+  handleShowMore= () => {
     this.setState({
       showItems: 
         this.state.showItems >= this.state.sushis.length ?
@@ -38,7 +38,8 @@ class App extends Component {
     // console.log(this.state)
     return (
       <div className="app">
-        <SushiContainer sushis={this.state.sushis} showItems={this.state.showItems}/>
+        <SushiContainer sushis={this.state.sushis} 
+        showItems={this.state.showItems} handleShowMore={this.handleShowMore}/>
         <Table />
       </div>
     );
